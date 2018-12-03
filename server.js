@@ -24,8 +24,8 @@ app.get('/login.html', function (req, res) {
 })
 
 app.use('/static',express.static(__dirname + '/static'));
-
-app.listen(8080);
+var port = process.env.PORT || 8080;
+app.listen(port);
 
 /*http.createServer(function (req, res) {
   fs.readFile('index.html', function(err, data) {
