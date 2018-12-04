@@ -1,0 +1,19 @@
+<html>
+    <body>
+            <h1>Your response has been recorded<h1>
+            <p> You will be redirected to Home in <span id="countdowntimer">5 </span> Seconds</p>
+
+            <script type="text/javascript">
+                var timeleft = 5;
+                var downloadTimer = setInterval(function(){
+                timeleft--;
+                document.getElementById("countdowntimer").textContent = timeleft;
+                if(timeleft <= 0){
+                    clearInterval(downloadTimer);
+                    window.location = "http://localhost:8081/";
+                }
+                },1000);
+            </script>     
+
+    </body>
+</html>
