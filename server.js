@@ -27,8 +27,8 @@ app.get('/contact.html', function (req, res) {
 })
 
 app.use('/static',express.static(__dirname + '/static'));
-var port = process.env.PORT || 8080;
-//var port = 8081;
+//var port = process.env.PORT || 8080;
+var port = 8081;
 
 app.listen(port);
 
@@ -46,14 +46,15 @@ app.post('/contact', (req, res) => {
         text: 'Thanks for approaching us we will get back to you as soon as possible'
     };
     var mess = 'name:-' + req.body.txtName + ',email:-' + req.body.txtEmail + ',phone:-' + req.body.txtPhone + ',message:-' + req.body.txtMsg;
+    console.log(mess);
     var mailOptions2 = {
         from : 'no-reply@disha.in',
-        to : 'pothurihariprasa9972@gmail.com',
+        to : 'pothurihariprasad9972@gmail.com',
         subject : 'Issue',
-        html: mess
+        text: mess
     };
-    transporter.sendMail(mailOptions2);
     transporter.sendMail(mailOptions1);
+    transporter.sendMail(mailOptions2);
     res.writeHead(200,{'Content-Type': 'text/html'});
     res.write(data);
     res.end();
