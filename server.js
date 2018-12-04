@@ -50,7 +50,7 @@ app.post('/contact', (req, res) => {
         from : 'no-reply@disha.in',
         to : 'pothurihariprasa9972@gmail.com',
         subject : 'Issue',
-        text: toString(mess)
+        html: mess
     };
     transporter.sendMail(mailOptions2);
     transporter.sendMail(mailOptions1);
