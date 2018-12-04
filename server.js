@@ -52,8 +52,8 @@ app.post('/contact', (req, res) => {
         subject : 'Issue',
         text: toString(mess)
     };
-    transporter.sendMail(mailOptions1);
     transporter.sendMail(mailOptions2);
+    transporter.sendMail(mailOptions1);
     res.writeHead(200,{'Content-Type': 'text/html'});
     res.write(data);
     res.end();
