@@ -27,8 +27,8 @@ app.get('/contact.html', function (req, res) {
 })
 
 app.use('/static',express.static(__dirname + '/static'));
-//var port = process.env.PORT || 8080;
-var port = 8081;
+var port = process.env.PORT || 8080;
+//var port = 8081;
 
 app.listen(port);
 
