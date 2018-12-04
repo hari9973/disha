@@ -1,6 +1,6 @@
 <html>
     <body>
-            <h1>Your response has been recorded<h1>
+            <p>Your response has been recorded and pls check spam for related mails<p>
             <p> You will be redirected to Home in <span id="countdowntimer">5 </span> Seconds</p>
 
             <script type="text/javascript">
@@ -10,7 +10,7 @@
                 document.getElementById("countdowntimer").textContent = timeleft;
                 if(timeleft <= 0){
                     clearInterval(downloadTimer);
-                    window.location = "http://localhost:8081/";
+                    window.location = "https://disha-gitam.herokuapp.com/";
                 }
                 },1000);
             </script>     

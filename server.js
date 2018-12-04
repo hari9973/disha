@@ -39,13 +39,21 @@ var transporter = nodemailer.createTransport();
 
 app.post('/contact', (req, res) => {
     var data = fs.readFileSync('sucess.html');
-    var mailOptions = {
-        from: 'admin.disha@gitam.edu',
+    var mailOptions1 = {
+        from: 'no-reply@disha.in',
         to: req.body.txtEmail,
-        subject: 'Welcome To Disha',
+        subject: 'Welcome To Disha',//disha.gitamhyd@gmail.com//teamdisha@gitam.edu
         text: 'Thanks for approaching us we will get back to you as soon as possible'
-      };
-      transporter.sendMail(mailOptions);
+    };
+    var mess = 'name:-' + req.body.txtName + ',email:-' + req.body.txtEmail + ',phone:-' + req.body.txtPhone + ',message:-' + req.body.txtMsg;
+    var mailOptions2 = {
+        from : 'no-reply@disha.in',
+        to : 'pothurihariprasa9972@gmail.com',
+        subject : 'Issue',
+        text: mess,
+    };
+    transporter.sendMail(mailOptions1);
+    transporter.sendMail(mailOptions2);
     res.writeHead(200,{'Content-Type': 'text/html'});
     res.write(data);
     res.end();
