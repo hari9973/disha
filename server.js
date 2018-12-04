@@ -42,14 +42,14 @@ app.post('/contact', (req, res) => {
     var mailOptions1 = {
         from: 'no-reply@disha.in',
         to: req.body.txtEmail,
-        subject: 'Welcome To Disha',//disha.gitamhyd@gmail.com//teamdisha@gitam.edu
+        subject: 'Welcome To Disha',
         text: 'Thanks for approaching us we will get back to you as soon as possible'
     };
-    var mess = 'name:-' + req.body.txtName + ',email:-' + req.body.txtEmail + ',phone:-' + req.body.txtPhone + ',message:-' + req.body.txtMsg;
+    var mess = 'name:-' + req.body.txtName + ',email:- ' + req.body.txtEmail + ',phone:-' + req.body.txtPhone + ',message:-' + req.body.txtMsg;
     console.log(mess);
     var mailOptions2 = {
         from : 'no-reply@disha.in',
-        to : 'pothurihariprasad9972@gmail.com',
+        to : 'disha.gitamhyd@gmail.com, teamdisha@gitam.edu',
         subject : 'Issue',
         text: mess
     };
