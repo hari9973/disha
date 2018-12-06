@@ -36,26 +36,20 @@ app.listen(port);
 var nodemailer = require('nodemailer');
 
 //var transporter = nodemailer.createTransport();
-var transporter = nodemailer.createTransport("SMTP",{
-    service: 'gmail',
-    auth: {
-      user: 'disha.gitamhyd@gmail.com',
-      pass: 'disha2017'
-    }
-  });
+var transporter = nodemailer.createTransport();
 
 app.post('/contact', (req, res) => {
     var data = fs.readFileSync('sucess.html');
     var mailOptions1 = {
-        from: 'disha.gitamhyd@gmail.com',
+        from: 'no-reply@disha.gitam.edu',
         to: req.body.txtEmail,
         subject: 'Welcome To Disha',
         text: 'Thanks for approaching us we will get back to you as soon as possible'
     };
     var mess = 'name:-' + req.body.txtName + ',email:- ' + req.body.txtEmail + ',phone:-' + req.body.txtPhone + ',message:-' + req.body.txtMsg;
-    console.log(mess);
+    //console.log(mess);
     var mailOptions2 = {
-        from : 'disha.gitamhyd@gmail.com',
+        from : 'no-reply@disha.gitam.edu',
         to : 'teamdisha@gitam.edu',
         subject : 'Questions',
         text: mess
